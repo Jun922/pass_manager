@@ -1,0 +1,22 @@
+how to use django
+
+start project
+django-admin startproject config
+
+create DB
+python manage.py migrate
+
+create super user
+python manage.py createsuperuser
+jun
+095.uenojun@gmail.com
+komukomufreesia
+
+start server
+python manage.py runserver
+
+create app
+python manage.py startapp app-name
+
+model make
+python manage.py makemigrations app-name

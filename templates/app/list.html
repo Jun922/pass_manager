@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "app/base.html" %}
+
+{% block data %}
+<table>
+    <tr class="col-name">
+        <th>アプリ名</th>
+        <th>パスワード</th>
+        <th>作成日</th>
+        <th>修正(仮)</th>
+        <th>削除(仮)</th>
+    </tr>
+
+    {% for app in app_list %}
+        <tr class="data">
+            <td>{{app.name}}</td>
+            <td>{{app.password}}</td>
+            <td>{{app.created_at}}</td>
+            <!-- <td>{{app.updated_at}}</td> -->
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

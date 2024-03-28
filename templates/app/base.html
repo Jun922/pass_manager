@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/app/list.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <!-- header part -->
+    {% include "app/header.html" %}
+
+
+    <!-- disp data list part -->
+    <section class="disp-data">
+        <div class="container">
+            {% block data %}{% endblock %}
+        </div>
+    </section>
+
+
+    <!-- footer part -->
+    {% include "app/footer.html" %}
+</body>
+</html>
