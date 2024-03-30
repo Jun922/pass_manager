@@ -21,10 +21,11 @@ from django.contrib import admin
 from django.urls import path
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
-from pw_recorder.views import AppListView
+from pw_recorder.views import AppListView, AppCreateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', AppListView.as_view(), name='list')
+    path('', AppListView.as_view(), name='list'),
+    path('create/', AppCreateView.as_view(), name='create'),
 ]

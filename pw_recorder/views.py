@@ -1,5 +1,6 @@
 from django.views import generic
 from .models import App
+from .forms import AppForm
 
 
 class AppListView(generic.ListView):
@@ -14,3 +15,11 @@ class AppListView(generic.ListView):
         else:
             app_list = App.objects.all()
         return app_list
+
+
+
+class AppCreateView(generic.CreateView):
+    model = App
+    form_class = AppForm
+    template_name = "app/form.html"
+    success_url = "/"
