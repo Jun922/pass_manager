@@ -24,7 +24,7 @@ th, td {
 .container {
     max-width: 1024px;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -61,10 +61,21 @@ header a {
 }
 
 
+
+/* article part */
+article .container {
+    display: flex;
+}
+
+
+
 /* table part */
 .disp-data {
     text-align: center;
     height: 85vh;
+    width: 75%;
+    margin-right: 150px;
+    font-size: 15px;
 }
 
 .col-name {
@@ -74,6 +85,28 @@ header a {
 
 .data {
     border-bottom: 2px dotted #ccc;
+}
+
+
+
+/* side bar part */
+.side-bar {
+    width: 15%;
+    padding: 0 40px 0 20px;
+    border-left: 1px solid #ccc;
+}
+
+.search-name form {
+    display: flex;
+    margin: 80px 0;
+}
+
+.search-name input {
+    height: 25px;
+}
+
+.search-name button {
+    white-space: nowrap;
 }
 
 

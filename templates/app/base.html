@@ -5,22 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/app/list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app/style.css' %}">
     <title>Document</title>
 </head>
 <body>
     <!-- header part -->
     {% include "app/header.html" %}
 
-
-    <!-- disp data list part -->
-    <section class="disp-data">
+    <article>
         <div class="container">
+            <!-- disp data list part -->
             {% block data %}
             {% endblock %}
+            <!-- paging func -->
         </div>
-    </section>
-
+    </article>
 
     <!-- footer part -->
     {% include "app/footer.html" %}
