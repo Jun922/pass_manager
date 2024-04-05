@@ -6,4 +6,3 @@ class AppForm(forms.ModelForm):
     class Meta:
         model = App
         fields = ("name", "password")
-

@@ -17,6 +17,12 @@
                 <td>{{app.name}}</td>
                 <td>{{app.password}}</td>
                 <td>{{app.created_at|date:"Y-m-j"}}</td>
+                <td>
+                    <a href="{% url 'update' app.pk %}">更新</a>
+                </td>
+                <td>
+                    <a href="{% url 'delete' app.pk %}">削除</a>
+                </td>
             </tr>
         {% endfor %}
     </table>
@@ -24,6 +30,10 @@
 
 <section class="side-bar">
     <nav>
+        <div class="create-pass">
+            <a href="create">新規作成</a>
+        </div>
+
         <div class="search-name">
             <form action="" method="get">
                 <input name="query" value="{{ request.GET.query }}" type="text" placeholder="検索ワードを入力"/>
