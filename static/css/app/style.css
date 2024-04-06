@@ -1,86 +1,93 @@
 @charset "UTF-8";
 
-/* share part */
+/* ---------- share part ---------- */
 body {
     margin: 0;
+    height: 100vh;
+}
+
+header, footer {
+    min-height: 5vh;
+    background-color: rgb(47, 47, 43);
+    color: white;
+}
+
+main {
+    height: 90vh;
+}
+
+h1 {
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 ul {
     list-style: none;
 }
 
-table {
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 30px;
+.wrapper {
+    margin: auto 10%;
 }
 
 .container {
-    max-width: 1024px;
-    margin: 0 auto;
-    width: 100%;
+    margin: auto 1%;
 }
 
 
 
-/* header part */
-header {
-    background-color: rgb(47, 47, 43);
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-header a {
-    color: white;
-    display: block;
-}
-
+/* ---------- header part ---------- */
 .header-contents {
     display: flex;
     justify-content: space-between;
 }
 
-.header-left {
-    margin: auto 0;
-}
-
-.header-right ul {
+.header-contents ul {
     display: flex;
 }
 
-.header-right li {
-    margin: auto 10px;
-}
-
-
-
-/* article part */
-article .container {
-    display: flex;
-}
-
-
-
-/* table part */
-.disp-data {
-    text-align: center;
-    height: 85vh;
-    width: 75%;
-    margin-right: 150px;
+.header-contents li {
     font-size: 15px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.header-contents a {
+    color: white;
+}
+
+
+
+/* ---------- main part ---------- */
+main {
+    display: flex;
+    width: 100%;
+}
+
+
+
+/* ---------- display-data part ---------- */
+.display-data {
+    width: 75%;
+    margin-left: 10px;
+}
+
+.display-data table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.display-data tr {
+    line-height: 50px;
 }
 
 .col-name {
     border-bottom: 2px solid rgb(81, 83, 93);
-    padding: 0 15px;
 }
 
 .data {
@@ -89,34 +96,32 @@ article .container {
 
 
 
-/* side bar part */
+/* ---------- side-bar part ---------- */
 .side-bar {
-    width: 15%;
-    padding: 0 40px 0 20px;
-    border-left: 1px solid #ccc;
+    width: 35%;
+    margin-right: 10px;
 }
 
-.search-name form {
-    display: flex;
-    margin: 80px 0;
+.side-bar nav {
+    height: 90vh;
+    margin: 0 auto;
+    padding-left: 20px;
+    border-left: 3px solid #ccc;
 }
 
-.search-name input {
-    height: 25px;
-}
-
-.search-name button {
-    white-space: nowrap;
+.search-name {
+    margin: 30px 0;
 }
 
 
 
-/* footer part */
+/* ---------- footer part ---------- */
 footer {
-    background-color: rgb(47, 47, 43);
     text-align: center;
-    color: white;
     font-size: small;
-    padding: 10px 0;
-    margin-top: 50px;
+}
+
+footer p {
+    display: inline-block;
+    padding-top: 10px;
 }
