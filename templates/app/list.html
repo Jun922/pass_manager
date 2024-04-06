@@ -9,8 +9,8 @@
                 <th>アプリ名</th>
                 <th>パスワード</th>
                 <th>作成日/更新日</th>
-                <th>修正(仮)</th>
-                <th>削除(仮)</th>
+                <th>修正</th>
+                <th>削除</th>
             </tr>
     
             {% for app in app_list %}
@@ -19,10 +19,10 @@
                     <td>{{app.password}}</td>
                     <td>{{app.created_at|date:"Y-m-j"}}</td>
                     <td>
-                        <a href="{% url 'update' app.pk %}">更新</a>
+                        <a href="{% url 'update' app.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
                     </td>
                     <td>
-                        <a href="{% url 'delete' app.pk %}">削除</a>
+                        <a href="{% url 'delete' app.pk %}"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             {% endfor %}
