@@ -115,6 +115,48 @@ main {
 
 
 
+/* ---------- register-new-data part ---------- */
+.register-new-data {
+    width: 80vw;
+    margin: 70px auto 0 auto;
+}
+
+.contents {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.register-new-data p {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.input {
+    width: 350px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.register-new-data button {
+    background-color: rgb(47, 47, 43);
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+	position:relative;
+	top:-3px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.register-new-data button:hover {
+    opacity: 0.8;
+    transition: all .5s;
+}
+
+
+
 /* ---------- footer part ---------- */
 footer {
     text-align: center;

@@ -9,87 +9,16 @@
     <title>PW-MANAGER</title>
 </head>
 <body>
-    <!-- header part -->
-    <!-- {% include "app/header.html" %} -->
-    <header>
-        <div class="container">
-            <div class="header-contents">
-                <h1><a href="{% url 'list' %}">LOGO(仮)</a></h1>
+    <!----- header part ----->
+    {% include "app/header.html" %}
 
-                <ul>
-                    <li><a href="#">設定(仮)</a></li>
-                    <li><a href="#">login/out(仮)</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-
-
+    <!----- main part ----->
     <main>
-            <section class="display-data">
-                <div class="container">
-                    <table>
-                        <tr class="col-name">
-                            <th>アプリ名</th>
-                            <th>パスワード</th>
-                            <th>作成日/更新日</th>
-                            <th>修正(仮)</th>
-                            <th>削除(仮)</th>
-                        </tr>
-                
-                        {% for app in app_list %}
-                            <tr class="data">
-                                <td>{{app.name}}</td>
-                                <td>{{app.password}}</td>
-                                <td>{{app.created_at|date:"Y-m-j"}}</td>
-                                <td>
-                                    <a href="{% url 'update' app.pk %}">更新</a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'delete' app.pk %}">削除</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </section>
-        
-
-
-            <section class="side-bar">
-                <div class="wrapper">
-                    <div class="container">
-                        <nav>
-                            <div class="create-pass">
-                                <a href="create">新規作成</a>
-                            </div>
-                    
-                            <div class="search-name">
-                                <form action="" method="get">
-                                    <input name="query" value="{{ request.GET.query }}" type="text" placeholder="検索ワードを入力"/>
-                                    <button type="submit">検索</button>
-                                </form>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </section>
-            <!-- disp data list part -->
-            <!-- {% block content %}
-            {% endblock %} -->
-            <!-- paging func -->
+        {% block content %}
+        {% endblock %}
     </main>
 
-
-
-    <!-- footer part -->
-    <!-- {% include "app/footer.html" %} -->
-    <footer>
-        <!-- <div class="container"> -->
-
-            <p>&copy; 2024 ORIGINAL_APPLICATION</p>
-        <!-- </div> -->
-    </footer>
+    <!----- footer part ----->
+    {% include "app/footer.html" %}
 </body>
 </html>

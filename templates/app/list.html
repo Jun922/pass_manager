@@ -2,44 +2,52 @@
 {% extends "app/base.html" %}
 
 {% block content %}
-<section class="disp-data">
-    <table>
-        <tr class="col-name">
-            <th>アプリ名</th>
-            <th>パスワード</th>
-            <th>作成日</th>
-            <th>修正(仮)</th>
-            <th>削除(仮)</th>
-        </tr>
-
-        {% for app in app_list %}
-            <tr class="data">
-                <td>{{app.name}}</td>
-                <td>{{app.password}}</td>
-                <td>{{app.created_at|date:"Y-m-j"}}</td>
-                <td>
-                    <a href="{% url 'update' app.pk %}">更新</a>
-                </td>
-                <td>
-                    <a href="{% url 'delete' app.pk %}">削除</a>
-                </td>
+<section class="display-data">
+    <div class="container">
+        <table>
+            <tr class="col-name">
+                <th>アプリ名</th>
+                <th>パスワード</th>
+                <th>作成日/更新日</th>
+                <th>修正(仮)</th>
+                <th>削除(仮)</th>
             </tr>
-        {% endfor %}
-    </table>
+    
+            {% for app in app_list %}
+                <tr class="data">
+                    <td>{{app.name}}</td>
+                    <td>{{app.password}}</td>
+                    <td>{{app.created_at|date:"Y-m-j"}}</td>
+                    <td>
+                        <a href="{% url 'update' app.pk %}">更新</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete' app.pk %}">削除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 </section>
 
-<section class="side-bar">
-    <nav>
-        <div class="create-pass">
-            <a href="create">新規作成</a>
-        </div>
 
-        <div class="search-name">
-            <form action="" method="get">
-                <input name="query" value="{{ request.GET.query }}" type="text" placeholder="検索ワードを入力"/>
-                <button type="submit">検索</button>
-            </form>
+
+<section class="side-bar">
+    <div class="wrapper">
+        <div class="container">
+            <nav>
+                <div class="create-pass">
+                    <a href="{% url 'create' %}">新規作成</a>
+                </div>
+        
+                <div class="search-name">
+                    <form action="" method="get">
+                        <input name="query" value="{{ request.GET.query }}" type="text" placeholder="検索ワードを入力"/>
+                        <button type="submit">検索</button>
+                    </form>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </div>
 </section>
 {% endblock %}
