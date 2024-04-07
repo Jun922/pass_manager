@@ -94,6 +94,18 @@ main {
     border-bottom: 2px dotted #ccc;
 }
 
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.page a {
+    display: inline-block;
+    border: 1px solid rgb(81, 83, 93);
+    background-color: rgb(81, 83, 93);
+    color: white;
+}
+
 
 
 /* ---------- side-bar part ---------- */
