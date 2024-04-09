@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <title>Document</title>
+</head>
+<body>
+    <a class="create_pw_btn" py-click="get_pw()" onclick="showPopup()">自動生成</a>
+    <div class="overlay" onclick="closePopup()"></div>
+
+    <div class="popup">
+        <h2>自動生成パスワード</h2>
+        <p id="new-pw"></p>
+        <a onclick="closePopup()">閉じる</a>
+    </div>
+
+    <py-script>
+        import secrets
+        import string
+        
+        def get_pw():
+            symbol = ("%", "&", "$", "#", "@", "!")
+            pw_words = string.ascii_letters + string.digits + "".join(symbol)
+            pw = "".join(secrets.choice(pw_words) for _ in range(16))
+            Element("new-pw").write(pw)
+    </py-script>
+
+    <!-- <script type="text/javascript" src="js/app/popup.js"></script> -->
+    <script>
+        function showPopup() {
+            document.querySelector(".overlay").style.display = "block";
+            document.querySelector(".popup").style.display = "block";
+        }
+        
+        function closePopup() {
+            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>

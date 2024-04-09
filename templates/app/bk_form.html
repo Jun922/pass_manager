@@ -10,19 +10,14 @@
                 {% csrf_token %}
 
                 <label class="name">サイト名</label>
-                <div class="name-contents">
-                    {{ form.name|add_class:"input" }}
-                    <div class="dummy create_pw_btn"></div>
-                </div>
+                {{ form.name|add_class:"input" }}
     
                 <label class="password">パスワード</label>
-                <div class="pw-contents">
-                    {{ form.password|add_class:"input" }}
-
-                    <!----- popup part ----->
-                    {% include "app/popup.html" %}
-                </div>
+                {{ form.password|add_class:"input" }}
                 
+                <!----- popup part ----->
+                {% include "app/popup.html" %}
+
                 <button type="submit">登録する</button>
             </div>
         </form>
