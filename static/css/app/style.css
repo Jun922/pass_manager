@@ -117,9 +117,20 @@ main {
     padding-left: 20px;
     border-left: 3px solid #ccc;
 }
+.create-pass {
+    padding: 50px 0;
+}
+
+.create-pass a {
+    border: 1px solid rgb(81, 83, 93);
+    background-color: rgb(81, 83, 93);
+    color: white;
+    padding: 7px 15px;
+    margin: 30px 0;
+}
 
 .search-name {
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 
@@ -219,12 +230,6 @@ main {
     border: 1px solid black;
     padding: 20px;
     z-index: 1000;
-}
-
-
-/* ------------------ create new pw part ------------------ */
-.create-new-pw {
-    background-color: red;
 }
 
 

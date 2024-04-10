@@ -13,7 +13,7 @@ class AppListView(generic.ListView):
         query = self.request.GET.get('query')
 
         if query:
-            app_list = App.objects.filter(name_icontains=query)
+            app_list = App.objects.filter(name__icontains=query)
         else:
             app_list = App.objects.all()
         return app_list
