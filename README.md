@@ -1,8 +1,9 @@
 # パスワード管理システム
 
 ## 使用技術一覧
-<img src="https://img.shields.io/badge/-django-#092E20.svg?logo=next.js&style={バッチのスタイル}&logoColor={ロゴのカラーコード}">
+<img src="https://img.shields.io/badge/-Django-092E20.svg?logo=django&style=for-the-badge">
 <img src="https://img.shields.io/badge/-Python-F2C63C.svg?logo=python&style=for-the-badge">
+
 
 ## 実装予定機能
 * データ一覧
