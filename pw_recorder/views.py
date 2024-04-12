@@ -7,7 +7,7 @@ from .forms import AppForm
 class AppListView(generic.ListView):
     template_name = 'app/list.html'
     model = App
-    paginate_by = 15
+    paginate_by = 10
 
     def get_queryset(self):
         query = self.request.GET.get('query')
@@ -38,4 +38,3 @@ class AppDeleteView(generic.DeleteView):
     model = App
     template_name = "app/confirm_delete.html"
     success_url = reverse_lazy('list')
-    

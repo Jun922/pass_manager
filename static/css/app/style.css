@@ -104,6 +104,15 @@ main {
     color: white;
 }
 
+.delete_btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    padding: 0;
+}
+
 
 /* --------------------- side bar part --------------------- */
 .side-bar {

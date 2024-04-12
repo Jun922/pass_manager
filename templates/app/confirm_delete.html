@@ -9,7 +9,18 @@
     <form method="post">
         {% csrf_token %}
         <p>本当に削除しますか?</p>
-        <input type="submit" value="確定">
+        <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
     </form>
+
+    <script>
+        function confirm_delete() {
+            const result = confirm("本当に削除してもよろしいですか?")
+            if (result) {
+                alert("OKを押しました！")
+            } else {
+                alert("キャンセルを押しました！")
+            }
+        }
+    </script>
 </body>
 </html>
