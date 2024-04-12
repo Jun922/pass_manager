@@ -36,5 +36,4 @@ class AppUpdateView(generic.UpdateView):
 
 class AppDeleteView(generic.DeleteView):
     model = App
-    template_name = "app/confirm_delete.html"
     success_url = reverse_lazy('list')
