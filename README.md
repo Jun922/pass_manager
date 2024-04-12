@@ -1,9 +1,19 @@
 # パスワード管理システム
 
 ## 使用技術一覧
-<img src="https://img.shields.io/badge/-Django-092E20.svg?logo=django&style=for-the-badge">
-<img src="https://img.shields.io/badge/-Python-F2C63C.svg?logo=python&style=for-the-badge">
-
+<!-- front -->
+<img src="https://img.shields.io/badge/-html5-#E34F26.svg?logo=html5&style=for-the-badge">
+<img src="https://img.shields.io/badge/-css3-#1572B6.svg?logo=css3&style=for-the-badge">
+<img src="https://img.shields.io/badge/-javascript-#F7DF1E.svg?logo=javascript&style=for-the-badge">
+<img src="https://img.shields.io/badge/-fontawesome-#538DD7.svg?logo=fontawesome&style=for-the-badge">
+<!-- back -->
+<img src="https://img.shields.io/badge/-Python-#F2C63C.svg?logo=python&style=for-the-badge">
+<!-- framework -->
+<img src="https://img.shields.io/badge/-Django-#092E20.svg?logo=django&style=for-the-badge">
+<!-- sql -->
+<img src="https://img.shields.io/badge/-sqlite-#003B57.svg?logo=sqlite&style=for-the-badge">
+<!-- dev tool -->
+<img src="https://img.shields.io/badge/-visualstudiocode-#007ACC.svg?logo=visualstudiocode&style=for-the-badge">
 
 ## 実装予定機能
 * データ一覧
