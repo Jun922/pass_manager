@@ -14,19 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-import os
-
 from django.contrib import admin
-from django.urls import path
-
-os.path.join(os.path.dirname(__file__), '../')
-from pw_recorder.views import AppListView, AppCreateView, AppUpdateView, AppDeleteView
+from django.urls import path, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', AppListView.as_view(), name='list'),
-    path('create/', AppCreateView.as_view(), name='create'),
-    path('<int:pk>/update/', AppUpdateView.as_view(), name='update'),
-    path('<int:pk>/delete', AppDeleteView.as_view(), name='delete'),
+    path("", include("pw_recorder.urls"))
 ]
