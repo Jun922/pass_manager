@@ -147,6 +147,6 @@ ACCOUNT_USERNAME_REQUIRED = True # サインアップ（ユーザー登録）の
 ACCOUNT_EMAIL_REQUIRED = False # サインアップ（ユーザー登録）の時にメールアドレスを尋ねる
 ACCOUNT_EMAIL_VERIFICATION = 'none' # メール検証を必須とする
 
-LOGIN_URL = '/account/login/' # ログインURLの設定
-LOGIN_REDIRECT_URL = '' # ログイン後のリダイレクト先
-ACCOUNT_LOGOUT_REDIRECT_URL = '/account/login/' #　ログアウト後のリダイレクト先
+LOGIN_URL = '/accounts/login/' # ログインURLの設定
+LOGIN_REDIRECT_URL = '/' # ログイン後のリダイレクト先
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/' #　ログアウト後のリダイレクト先

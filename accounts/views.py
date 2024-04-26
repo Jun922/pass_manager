@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
+from .models import CustomUser 
+from .forms import ProfileForm
+
+class HomeView(TemplateView):
+    template_name = 'account/home.html'
+
+
+class ProfileEditView(LoginRequiredMixin, UpdateView):
+    template_name = 'account/edit_profile.html'
+    model = CustomUser
+    form_class = ProfileForm
+    success_url = '/accounts/edit_profile/'
+
+    def get_object(self):
+        return self.request.user
