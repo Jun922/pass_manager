@@ -1,11 +1,12 @@
-from django import forms
-from .models import CustomUser
-
-class ProfileForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(ProfileForm, self).__init__(*args, **kwargs)
+from django.contrib.auth.forms import UserCreationForm
+from .models import User
 
 
+class SignUpForm(UserCreationForm):
     class Meta:
-        model = CustomUser
-        fields = ('nickname',)
+        model = User
+        fields = (
+            "account_id",
+            "username",
+            "pass_word",
+        )

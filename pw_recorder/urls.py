@@ -2,6 +2,7 @@ from django.urls import path
 from .views import AppListView, AppCreateView, AppUpdateView, AppDeleteView
 
 
+app_name = "pw_manager"
 urlpatterns = [
     path('', AppListView.as_view(), name='list'),
     path('create/', AppCreateView.as_view(), name='create'),
