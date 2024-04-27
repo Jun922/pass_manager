@@ -4,22 +4,19 @@ from django.urls import reverse_lazy
 from .forms import SignUpForm
 
 
-class IndexView(TemplateView):
-    """ ホームビュー """
-    template_name = "index.html"
+class LoginView(TemplateView):
+    template_name = "accounts/login.html"
 
 
 class SignupView(CreateView):
-    """ ユーザー登録用ビュー """
-    form_class = SignUpForm # 作成した登録用フォームを設定
+    form_class = SignUpForm
     template_name = "accounts/signup.html" 
-    success_url = reverse_lazy("accounts:index") # ユーザー作成後のリダイレクト先ページ
+    success_url = reverse_lazy("pw_recorder:list")
 
     def form_valid(self, form):
-        # ユーザー作成後にそのままログイン状態にする設定
         response = super().form_valid(form)
         account_id = form.cleaned_data.get("account_id")
-        password = form.cleaned_data.get("password1")
+        password = form.cleaned_data.get("password")
         user = authenticate(account_id=account_id, password=password)
         login(self.request, user)
         return response

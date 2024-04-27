@@ -8,5 +8,5 @@ class SignUpForm(UserCreationForm):
         fields = (
             "account_id",
             "username",
-            "pass_word",
+            "password",
         )

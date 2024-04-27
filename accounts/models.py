@@ -39,12 +39,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=gettext_lazy("account_id"), unique=True, max_length=100
         )
 
-    email = models.EmailField(
-        verbose_name=gettext_lazy("email"), unique=True
-    )
-
     username = models.CharField(
         verbose_name=gettext_lazy("username"), max_length=30, unique=True, null=True, blank=False
+    )
+
+    password = models.CharField(
+        verbose_name=gettext_lazy("password"), max_length=50, null=True, blank=False
+    )
+
+    email = models.EmailField(
+        verbose_name=gettext_lazy("email"), unique=True
     )
     
     first_name = models.CharField(
@@ -53,10 +57,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     last_name = models.CharField(
         verbose_name=("last_name"), max_length=30
-    )
-
-    pass_word = models.CharField(
-        verbose_name=gettext_lazy("pass_word"), max_length=50, null=True, blank=False
     )
 
     is_superuser = models.BooleanField(
