@@ -19,7 +19,6 @@ class AppListView(generic.ListView):
         return app_list
 
 
-
 class AppCreateView(generic.CreateView):
     model = App
     form_class = AppForm

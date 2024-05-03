@@ -1,22 +1,19 @@
-from django.contrib.auth import login, authenticate
-from django.views.generic import TemplateView, CreateView
-from django.urls import reverse_lazy
-from .forms import SignUpForm
+from django.views.generic.base import TemplateView
+from django.views.generic.edit import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import CustomUser 
+from .forms import ProfileForm
 
 
-class LoginView(TemplateView):
-    template_name = "accounts/login.html"
+class HomeView(TemplateView):
+    template_name = 'account/home.html'
 
 
-class SignupView(CreateView):
-    form_class = SignUpForm
-    template_name = "accounts/signup.html" 
-    success_url = reverse_lazy("pw_recorder:list")
+class ProfileEditView(LoginRequiredMixin, UpdateView):
+    template_name = 'account/edit_profile.html'
+    model = CustomUser
+    form_class = ProfileForm
+    success_url = '/accounts/edit_profile/'
 
-    def form_valid(self, form):
-        response = super().form_valid(form)
-        account_id = form.cleaned_data.get("account_id")
-        password = form.cleaned_data.get("password")
-        user = authenticate(account_id=account_id, password=password)
-        login(self.request, user)
-        return response
+    def get_object(self):
+        return self.request.user
