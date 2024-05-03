@@ -3,6 +3,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import UserManager, PermissionsMixin
 
 
+# Create your models here.
 class UserManager(UserManager):
     def _create_user(self, email, password, **extra_fields):
         email = self.normalize_email(email)
@@ -29,6 +30,7 @@ class UserManager(UserManager):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('メールアドレス', unique=True)
     nickname = models.CharField('ニックネーム', max_length=50)
+    # プロフィール画像をavatarとして設定
     avatar = models.ImageField(upload_to='images', verbose_name='プロフィール画像', blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
