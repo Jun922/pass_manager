@@ -6,9 +6,8 @@ from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('accounts/', include('accounts.urls')),
-    path("pw_recorder/", include("pw_recorder.urls")),
+    path('accounts/', include('allauth.urls')), 
+    path("", include("pw_recorder.urls")),
 ]
 
 if settings.DEBUG:

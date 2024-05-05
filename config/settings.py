@@ -40,18 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'pw_recorder.apps.PwRecorderConfig',
-    'accounts',
     'bootstrap4',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     ]
-
-SITE_ID = 1
-LOGIN_REDIRECT_URL = '/accounts/home'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,9 +143,18 @@ MESSAGE_TAGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = 'list'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'

@@ -13,7 +13,7 @@ class Data:
 
     
     def output_sql_file(self):
-        path = f"{os.getcwd()}/utility/insert.sql"
+        path = f"{os.getcwd()}/django/utility/insert.sql"
         with open(path, mode="a", encoding="utf-8") as file:
             for val in self.sql[2:]:
                 file.write(f"\n{val}")

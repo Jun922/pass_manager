@@ -3,7 +3,7 @@ from .models import App
 
 
 class AppAdmin(admin.ModelAdmin):
-    fields = ('name', 'password', 'created_at', 'updated_at')
+    fields = ('site_name', 'password', 'created_at', 'updated_at')
     readonly_fields = ('created_at', 'updated_at')
 
 
