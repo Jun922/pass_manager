@@ -12,11 +12,11 @@ class AppListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('query')
-
         if query:
             app_list = App.objects.filter(name__icontains=query, user=self.request.user)
         else:
-            app_list = App.objects.all(user=self.request.user)
+            app_list = App.objects.filter(user=self.request.user)
+
         return app_list
 
 
@@ -24,7 +24,7 @@ class AppCreateView(LoginRequiredMixin, generic.CreateView):
     model = App
     form_class = AppForm
     template_name = "app/form.html"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("pw_recorder/list")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -35,7 +35,7 @@ class AppUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView)
     model = App
     fields = "__all__"
     template_name = "app/form.html"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("pw_recorder/list")
 
     def get_success_url(self, **kwargs):
         pk = self.kwargs["pk"]
@@ -50,7 +50,7 @@ class AppUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView)
 
 class AppDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = App
-    success_url = reverse_lazy('list')
+    success_url = reverse_lazy('pw_recorder/list')
 
     def test_func(self, **kwargs):
         pk = self.kwargs["pk"]
