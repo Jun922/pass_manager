@@ -4,12 +4,12 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
-            <h1 class="mb-4">ユーザー登録</h1>
+            <h1 class="my-3">ユーザー登録</h1>
             <form method="POST" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 
                 {% bootstrap_form form %}
-                <button type="submit" class="btn btn-primary" name="button">
+                <button type="submit" class="btn btn-dark" name="button">
                     登録
                 </button>
             </form>

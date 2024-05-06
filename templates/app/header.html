@@ -5,9 +5,9 @@
     <div class="wrapper">
         <div class="container">
             <div class="header-contents">
-                <h1><a href="{% url 'pw_recorder:list' %}">My App</a></h1>
+                <h1 class="pt-3"><a href="{% url 'pw_recorder:list' %}">My App</a></h1>
 
-                <ul>
+                <ul class="pt-3">
                     {% if user.is_authenticated %}
                         <li>{{ user.username }}さん</li>
 
