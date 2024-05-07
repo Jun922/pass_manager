@@ -30,6 +30,36 @@
 
 <br />
 
+#### users テーブル
+
+| Column       | Type     | Options               |
+| -------------| ---------| ----------------------|
+| id           | integer  | primary key, not null |
+| password     | varchar  | null: false           |
+| username     | varchar  | not null, unique      |
+| first_name   | varchar  | not null              |
+| last_name    | varchar  | not null              |
+| email        | varchar  | not null              |
+| last_login   | datetime |                       |
+| is_superuser | bool     | not null              |
+| is_staff     | bool     | not null              |
+| is_active    | bool     | not null              |
+| date_joined  | datetime | not null              |
+
+
+#### pw_recorder テーブル
+
+| Column     | Type     | Options               |
+| -----------| ---------| ----------------------|
+| id         | integer  | primary key, not null |
+| site_name  | varchar  | not null              |
+| password   | varchar  | not null              |
+| created_at | datetime | not null              |
+| updated_at | datetime | not null              |
+| user_id    | integer  | foreign key, not null |
+
+<br />
+
 ## 実装予定機能
 
 * ユーザー顔認証機能
