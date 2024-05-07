@@ -10,7 +10,7 @@
 | ![データ一覧画面](/docs/data-list.png) |
 
 | ログイン画面 |
-| ---- | ---- |
+| ---- |
 | ![ログイン画面](/docs/login.png) |
 
 | データ登録画面(パスワード自動生成) |
@@ -30,7 +30,9 @@
 
 <br />
 
-#### users テーブル
+## DB
+
+* users テーブル
 
 | Column       | Type     | Options               |
 | -------------| ---------| ----------------------|
@@ -47,7 +49,7 @@
 | date_joined  | datetime | not null              |
 
 
-#### pw_recorder テーブル
+* pw_recorder テーブル
 
 | Column     | Type     | Options               |
 | -----------| ---------| ----------------------|
